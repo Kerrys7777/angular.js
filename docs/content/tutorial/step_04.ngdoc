@@ -22,20 +22,23 @@ the repeater, and letting the data binding magic do the rest of the work.
 __`app/index.html`:__
 
 ```html
-  Search: <input ng-model="query">
-  Sort by:
-  <select ng-model="orderProp">
-    <option value="name">Alphabetical</option>
-    <option value="age">Newest</option>
-  </select>
-
-
-  <ul class="phones">
-    <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
-      <span>{{phone.name}}</span>
-      <p>{{phone.snippet}}</p>
-    </li>
-  </ul>
+  <fieldset class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-4">Search:</label>
+      <div class="col-sm-8">
+        <input ng-model="query" class="form-control" placeholder="Search">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4">Sort by:</label>
+      <div class="col-sm-8">          
+        <select ng-model="orderProp" class="form-control">
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+		    </select>
+      </div>
+    </div>
+  </fieldset>
 ```
 
 We made the following changes to the `index.html` template:
